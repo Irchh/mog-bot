@@ -1,13 +1,8 @@
-import threading
+import os
 import datetime
-import asyncio
-import curses
-from curses import wrapper
 import youtube_dl
 import discord
 from discord.utils import get
-from discord.ext import commands
-import os
 
 mainGuild = 745725474465906732 # hjelp eg sitter fast i doen
 hahaYes = 627151632534339595 # haha yes
@@ -21,21 +16,6 @@ TheFlipReacts = [748496866827829261, 475418097990500362, 595813672811626516]
 
 # music queue
 queues = {}
-
-resp = None
-async def response():
-	print("Start of response()")
-	old_lc = None
-	print(input("Hello: "))
-	while True:
-		if old_lc != last_channel:
-			old_lc = last_channel
-			print("NEw ms")
-			await old_lc.send("Hello")
-
-async def search_submissions():
-	while True:
-		await asyncio.sleep(1)
 
 class MogBot(discord.Client):
 	async def on_ready(self):
